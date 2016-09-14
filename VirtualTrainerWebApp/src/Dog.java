@@ -1,5 +1,10 @@
 
 public class Dog {
+@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Name  "+this.name+"  colour  "+this.colour;
+	}
 private String name;
 private String colour;
 	public Dog() {
