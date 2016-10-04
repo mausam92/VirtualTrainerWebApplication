@@ -4,19 +4,17 @@ import javax.naming.NamingException;
 
 import com.yash.vta.dao.UserDao;
 import com.yash.vta.daoimpl.UserDaoImpl;
-import com.yash.vta.ldap.LDAPInform;
-import com.yash.vta.ldap.LDAPTest;
 import com.yash.vta.model.User;
 import com.yash.vta.service.UserService;
 
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl /*implements UserService*/{
 	
 
 	
-	public String validateUser(String username, String password) throws NamingException{
+	/*public String validateUser(String username, String password) throws NamingException{
 		
-		LDAPTest ldap = new LDAPTest();
-		ldap.validateUser(username, password);
+		//LDAPTest ldap = new LDAPTest();
+		//ldap.validateUser(username, password);
 		User user = getUserInfo(username);
 		user.setUser_status("inactive");
 		
@@ -35,9 +33,9 @@ public class UserServiceImpl implements UserService{
 		 UserDao userDao = new UserDaoImpl();
 				userDao.addUser(user);
 		return null;
-	}
+	}*/
 	
-	public User getUserInfo(String username)throws NamingException{
+	/*public User getUserInfo(String username)throws NamingException{
 		
 		LDAPInform ldapInform = new LDAPInform();
 		String[] lookupName = username.split("@");
@@ -45,7 +43,7 @@ public class UserServiceImpl implements UserService{
 	    user.setUser_manager_mail(ldapInform.getUserManagerInfo(user.getUser_manager()));
 	    
 	    return user;
-	}
+	}*/
 	
 	public boolean checkExistingUser(User user){
 		UserDao userdao = new UserDaoImpl();
